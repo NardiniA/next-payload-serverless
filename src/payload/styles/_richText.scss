@@ -1,0 +1,7 @@
+:root {
+  --rich-text-height: 19.2307692308rem;
+}
+
+.rich-text__input {
+  min-height: var(--rich-text-height);
+}
