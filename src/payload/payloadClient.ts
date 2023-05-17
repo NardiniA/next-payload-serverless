@@ -36,6 +36,18 @@ export const getPayloadClient = async (): Promise<Payload> => {
       mongoURL: process.env.MONGODB_URI as string,
       secret: process.env.PAYLOAD_SECRET as string,
       config: config,
+      email: {
+        fromName: "Admin",
+        fromAddress: "contact@antonionardini.com",
+        transportOptions: {
+          host: process.env.SMTP_HOST as string,
+          port: +process.env.SMTP_PORT! || 587,
+          auth: {
+            user: process.env.SMTP_USER as string,
+            pass: process.env.SMTP_PASS as string,
+          },
+        }
+      }
     })
   }
 
